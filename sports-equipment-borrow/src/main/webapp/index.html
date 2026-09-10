@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>体育器材借用申请</title>
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+<div class="page">
+    <h1>体育器材借用申请</h1>
+    <p class="subtitle">请选择器材，填写借用数量与归还时间</p>
+
+    <div class="card">
+        <form id="borrow-form" autocomplete="off">
+            <div class="form-item">
+                <label for="equipment">器材<span class="required">*</span></label>
+                <select id="equipment" name="equipmentId">
+                    <option value="">器材加载中…</option>
+                </select>
+                <button type="button" id="retry-load" class="link-btn" hidden>重新加载器材列表</button>
+                <div class="stock-hint" id="stock-hint"></div>
+            </div>
+
+            <div class="form-item">
+                <label for="quantity">数量<span class="required">*</span></label>
+                <input type="number" id="quantity" name="quantity" min="1" max="100"
+                       step="1" value="1" placeholder="请输入借用数量">
+            </div>
+
+            <div class="form-item">
+                <label for="return-time">归还时间<span class="required">*</span></label>
+                <input type="datetime-local" id="return-time" name="returnTime">
+            </div>
+
+            <button type="submit" id="submit-btn" class="primary-btn" disabled>提交申请</button>
+        </form>
+
+        <div id="message" class="message" role="alert" hidden></div>
+    </div>
+</div>
+<script src="static/js/app.js"></script>
+</body>
+</html>
